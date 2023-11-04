@@ -2,25 +2,25 @@ const taskLists = document.querySelectorAll(".task-list");
 const cardTasks = document.querySelector("#card .task-list");
 const titleInput = document.querySelector("#title");
 const descriptionInput = document.querySelector("#description");
-const submitButton = document.querySelector("#submit-button");
+const submitAddCard = document.querySelector("#submit-card");
 const errorContainer = document.querySelector(".error-container");
 
 let tasks = [];
 
-function abreAddColuna() {
-    document.getElementById('input-container').style.display = 'block';
+function openAddColumn() {
+    document.getElementById('input-column').style.display = 'block';
 }
 
-function fechaAddColuna() {
-    document.getElementById('input-container').style.display = 'none';
+function closeAddColumn() {
+    document.getElementById('input-column').style.display = 'none';
 }
 
-function AbreAddCard() {
-    document.getElementById('input-container').style.display = 'block';
+function openAddCard() {
+    document.getElementById('input-card').style.display = 'block';
 }
 
-function fechaAddCard() {
-    document.getElementById('input-container').style.display = 'none';
+function closeAddCard() {
+    document.getElementById('input-card').style.display = 'none';
 }
 
 taskLists.forEach((taskList) => {
@@ -42,7 +42,7 @@ function createTask(taskId, title, description) {
 
   taskTitle.textContent = title;
   taskDescription.textContent = description;
-  deleteIcon.textContent = "Excluir";
+  deleteIcon.textContent = "X";
 
   taskCard.setAttribute("draggable", true);
   taskCard.setAttribute("task-id", taskId);
@@ -56,24 +56,8 @@ function createTask(taskId, title, description) {
   cardTasks.append(taskCard);
 }
 
-function addColor(column) {
+function addColor() {
   let color;
-  switch (column) {
-    case "analise":
-      color = "rgb(96, 96, 192)";
-      break;
-    case "alinhamento":
-      color = "rgb(83, 156, 174)";
-      break;
-    case "desenvolvimento":
-      color = "rgb(224, 165, 116)";
-      break;
-    case "codereview":
-      color = "rgb(222, 208, 130)";
-      break;
-    default:
-      color = "rgb(232, 232, 232)";
-  }
   return color;
 }
 
@@ -94,8 +78,6 @@ function dragOver(e) {
 }
 
 function dragDrop() {
-  const columnId = this.parentNode.id;
-  elementBeingDragged.firstChild.style.backgroundColor = addColor(columnId);
   this.append(elementBeingDragged);
 }
 
@@ -130,7 +112,7 @@ function addTask(e) {
     showError("Título em uso!");
   }
 }
-submitButton.addEventListener("click", addTask);
+submitAddCard.addEventListener("click", addTask);
 
 function deleteTask() {
   const headerTitle = this.parentNode.firstChild.textContent;

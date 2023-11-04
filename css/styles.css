@@ -29,9 +29,9 @@
     left: 0; right: 0;
     margin: auto;
     width: 500px;
-    height: 250px;
-    padding: 15px;
-    background-color: rgba(100, 100, 100, 0.6);
+    height: 350px;
+    padding: 30px;
+    background-color: rgba(100, 100, 100, 0.8);
     border-radius: 5px;
     box-shadow: 0 0px 10px rgba(250, 250, 0, 0.3);
     border: 1px groove rgba(250, 250, 0, 0.6);
@@ -49,19 +49,7 @@
     transition: .2s;
     cursor: pointer;
   }
-
-  header .new-card {
-    margin: 25px 0px;
-    width: 100px;
-    padding: 5px;
-    color: white;
-    background: rgba(25, 0, 255, 0.111);
-    border: 1px solid rgba(25, 0, 255, 0.66);
-    border-radius: 8px;
-    transition: .2s;
-    cursor: pointer;
-  }
-
+  
   header .close-card {
     width: 40px;
     padding: 3px;
@@ -74,19 +62,119 @@
     cursor: pointer;
   }
 
+  header .type-card {
+    margin: 20px 0px;
+    width: 316px;
+    padding: 8px;
+    color: white;
+    background: none;
+    border: 1px solid rgb(250, 250, 0, 0.6);
+    border-radius: 8px;
+  }
+ 
+  header .typeoption-card {
+    margin: 15px 0px;
+    width: 260px;
+    padding: 8px;
+    color: white;
+    background: rgba(100, 100, 100, 1);
+    border: 1px solid rgb(250, 250, 0, 0.6);
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+  }
+ 
+  header .new-card {
+    margin: 25px 0px;
+    width: 100px;
+    padding: 5px;
+    color: white;
+    background: rgba(25, 0, 255, 0.111);
+    border: 1px solid rgba(25, 0, 255, 0.66);
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+  }
+  
   header .add-card:hover {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-      0 5px 5px 0 rgba(250, 250, 0, 0.66);
+    0 5px 5px 0 rgba(250, 250, 0, 0.66);
   }
-
-  header .new-card:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-      0 5px 5px 0 rgba(25, 0, 255, 0.66);
-  }
-
+  
   header .close-card:hover {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-      0 5px 5px 0 rgba(222, 33, 33, 0.66);
+    0 5px 5px 0 rgba(222, 33, 33, 0.66);
+  }
+  
+  header .new-card:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
+    0 5px 5px 0 rgba(25, 0, 255, 0.66);
+  }
+
+  header .input-container .input-column {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    background-color: rgba(100, 100, 100, 0.6);
+    border-radius: 5px;
+    box-shadow: 0 0px 10px rgba(250, 250, 0, 0.3);
+    border: 1px groove rgba(250, 250, 0, 0.6);
+    display: none;
+  }
+
+  header .add-column {
+    margin: 10px 30px;
+    width: 150px;
+    padding: 10px;
+    color: white;
+    background: rgba(250, 250, 0, 0.111);
+    border: 1px solid rgba(250, 250, 0, 0.66);
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+  }
+
+  header .close-column {
+    width: 40px;
+    padding: 3px;
+    margin: auto;
+    color: white;
+    background: rgb(222, 33, 33, 0.111);
+    border: 1px solid rgb(222, 33, 33, 0.66);
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+  }
+
+  header .new-column {
+    margin: 25px 0px;
+    width: 100px;
+    padding: 5px;
+    color: white;
+    background: rgba(25, 0, 255, 0.111);
+    border: 1px solid rgba(25, 0, 255, 0.66);
+    border-radius: 8px;
+    transition: .2s;
+    cursor: pointer;
+  }
+
+  header .add-column:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
+    0 5px 5px 0 rgba(250, 250, 0, 0.66);
+  }
+  
+  header .close-column:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
+    0 5px 5px 0 rgba(222, 33, 33, 0.66);
+  }
+  
+  header .new-column:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
+    0 5px 5px 0 rgba(25, 0, 255, 0.66);
   }
 
   .row {
@@ -104,6 +192,13 @@
   
   .fields #title {
     width: 460px;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgb(250, 250, 0, 0.6);
+  }
+  
+  .fields #title-column {
+    width: 460px;
     border: none;
     border-radius: 10px;
     padding: 20px;
@@ -111,9 +206,9 @@
   
   .fields #description {
     width: 460px;
-    border: none;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
+    border: 1px solid rgb(250, 250, 0, 0.6);
   }
   
   .column-container {
