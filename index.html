@@ -1,99 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <div class="info-container">
-          <h1>Kanban</h1>
-      </div>
-      <div>
-        <button class="add-card" type="button" onclick="openAddCard();">Adicionar Cartão</button>
-      </div>
-      <div>
-        <button class="add-column" type="button" onclick="openAddColumn();">Adicionar Coluna</button>
-      </div>
+        <div class="info-container">
+            <h1>Kanban</h1>
+        </div>
+        <div>
+            <button class="add-card" type="button" onclick="openAddCard();">Adicionar Cartão</button>
+        </div>
+        <div>
+            <button class="add-column" type="button" onclick="openAddColumn();">Adicionar Coluna</button>
+        </div>
 
-      <form class="input-container" id="input-card">
-        <div class="row">
-          <div>
-            <h2>#Adicionar Cartão</h2>
-          </div>
-          <div>
-            <button class="close-card" type="button" onclick="closeAddCard();">X</button>
-          </div>
-        </div>
-        <div class="fields">
-          <input id="title" placeholder="Título" /><br>
-          <input id="description" placeholder="Descrição" />
-        </div>
-        <div class="type-card">
-          <label>Opção:</label>
-          <select class="typeoption-card">
-            <option>Opção 1</option>
-            <option>Opção 2</option>
-            <option>Opção 3</option>
-          </select>
-        </div>
-        <div>
-          <button class="new-card" type="submit" id="submit-card">Criar</button>
-        </div>
-      </form>
+        <form class="input-container" id="input-card">
+            <div class="row">
+                <div>
+                    <h2>#Adicionar Cartão</h2>
+                </div>
+                <div>
+                    <button class="close-card" type="button" onclick="closeAddCard();">X</button>
+                </div>
+            </div>
+            <div class="fields">
+                <input id="title" placeholder="Título" /><br>
+                <input id="description" placeholder="Descrição" />
+            </div>
+            <div>
+                <button class="new-card" type="submit" id="submit-card">Criar</button>
+            </div>
+        </form>
       
-      <form class="input-container" id="input-column">
-        <div class="row">
-          <div>
-            <h2>#Adicionar Coluna</h2>
-          </div>
-          <div>
-            <button class="close-column" type="button" onclick="closeAddColumn();">X</button>
-          </div>
-        </div>
-        <div class="fields">
-          <input id="title-column" placeholder="Título Coluna" />
-        </div>
-        <div>
-          <button class="new-column" type="submit" id="submit-column">Criar</button>
-        </div>
-      </form>
+        <form class="input-container" id="input-column">
+            <div class="row">
+                <div>
+                    <h2>#Adicionar Coluna</h2>
+                </div>
+                <div>
+                    <button class="close-column" type="button" onclick="closeAddColumn();">X</button>
+                </div>
+            </div>
+            <div class="fields">
+                <input id="title-column" placeholder="Título da Coluna" />
+            </div>
+            <div>
+                <button class="new-column" type="submit" id="submit-column">Criar</button>
+            </div>
+        </form>
     
     </header>
 
     <section class="column-container">
-      
-      <div class="task-column" id="card">
-        <h3>Coluna 1</h3>
-        <hr class="custom-hr" />
-        <div class="task-list"></div>
-      </div>
-
-      
-      <div class="task-column" id="">
-        <h3>Coluna 2</h3>
-        <hr class="custom-hr" />
-        <div class="task-list"></div>
-      </div>
-
-      <div class="task-column" id="">
-        <h3>Coluna 3</h3>
-        <hr class="custom-hr" />
-        <div class="task-list"></div>
-      </div>
-
-      <div class="task-column" id="">
-        <h3>Coluna 4</h3>
-        <hr class="custom-hr" />
-        <div class="task-list"></div>
-      </div>
-
-
-    </section>
+        </section>
 
     <div class="error-container"></div>
 
     <script src="js/app.js"></script>
-  </body>
+</body>
 </html>

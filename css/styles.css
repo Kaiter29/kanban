@@ -1,45 +1,47 @@
 * {
     font-family: 'Trebuchet MS', Arial, sans-serif;
-  }
-  
-  body {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     padding: 0;
     background: rgb(93, 93, 93);
-  }
-  
-  header {
-    width: 100vw;
+}
+
+header {
+    width: 100%;
     background-color: none;
-    border-bottom: 0.5px solid rgb(250, 250, 0, 0.500);
+    border-bottom: 0.5px solid rgba(250, 250, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  header .info-container {
-    color: rgb(250, 250, 0, 0.500);
-    width: 500px;
-    margin: 10px 30px;
-  }
+    padding: 0 10px;
+}
 
-  header .input-container {
+header .info-container {
+    color: rgba(250, 250, 0, 0.5);
+    margin: 10px;
+}
+
+header .input-container {
     position: fixed;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 500px;
-    height: 350px;
+    height: auto;
     padding: 30px;
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgba(100, 100, 100, 0.9);
     border-radius: 5px;
-    box-shadow: 0 0px 10px rgba(250, 250, 0, 0.3);
+    box-shadow: 0 0 10px rgba(250, 250, 0, 0.3);
     border: 1px groove rgba(250, 250, 0, 0.6);
     display: none;
-  }
+    z-index: 100;
+}
 
-  header .add-card {
-    margin: 10px 30px;
+header .add-card, .add-column {
+    margin: 10px;
     width: 150px;
     padding: 10px;
     color: white;
@@ -48,224 +50,255 @@
     border-radius: 8px;
     transition: .2s;
     cursor: pointer;
-  }
-  
-  header .close-card {
+}
+
+header .close-card, .close-column {
     width: 40px;
     padding: 3px;
-    margin: auto;
     color: white;
-    background: rgb(222, 33, 33, 0.111);
-    border: 1px solid rgb(222, 33, 33, 0.66);
+    background: rgba(222, 33, 33, 0.111);
+    border: 1px solid rgba(222, 33, 33, 0.66);
     border-radius: 8px;
     transition: .2s;
     cursor: pointer;
-  }
+}
 
-  header .type-card {
-    margin: 20px 0px;
-    width: 316px;
-    padding: 8px;
-    color: white;
-    background: none;
-    border: 1px solid rgb(250, 250, 0, 0.6);
-    border-radius: 8px;
-  }
- 
-  header .typeoption-card {
-    margin: 15px 0px;
-    width: 260px;
-    padding: 8px;
-    color: white;
-    background: rgba(100, 100, 100, 1);
-    border: 1px solid rgb(250, 250, 0, 0.6);
-    border-radius: 8px;
-    transition: .2s;
-    cursor: pointer;
-  }
- 
-  header .new-card {
-    margin: 25px 0px;
+header .new-card, .new-column {
+    margin: 25px 0 0 0;
     width: 100px;
-    padding: 5px;
-    color: white;
-    background: rgba(25, 0, 255, 0.111);
-    border: 1px solid rgba(25, 0, 255, 0.66);
-    border-radius: 8px;
-    transition: .2s;
-    cursor: pointer;
-  }
-  
-  header .add-card:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-    0 5px 5px 0 rgba(250, 250, 0, 0.66);
-  }
-  
-  header .close-card:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-    0 5px 5px 0 rgba(222, 33, 33, 0.66);
-  }
-  
-  header .new-card:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-    0 5px 5px 0 rgba(25, 0, 255, 0.66);
-  }
-
-  header .input-container .input-column {
-    position: fixed;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    margin: auto;
-    width: 500px;
-    height: 250px;
-    padding: 15px;
-    background-color: rgba(100, 100, 100, 0.6);
-    border-radius: 5px;
-    box-shadow: 0 0px 10px rgba(250, 250, 0, 0.3);
-    border: 1px groove rgba(250, 250, 0, 0.6);
-    display: none;
-  }
-
-  header .add-column {
-    margin: 10px 30px;
-    width: 150px;
     padding: 10px;
     color: white;
-    background: rgba(250, 250, 0, 0.111);
-    border: 1px solid rgba(250, 250, 0, 0.66);
-    border-radius: 8px;
-    transition: .2s;
-    cursor: pointer;
-  }
-
-  header .close-column {
-    width: 40px;
-    padding: 3px;
-    margin: auto;
-    color: white;
-    background: rgb(222, 33, 33, 0.111);
-    border: 1px solid rgb(222, 33, 33, 0.66);
-    border-radius: 8px;
-    transition: .2s;
-    cursor: pointer;
-  }
-
-  header .new-column {
-    margin: 25px 0px;
-    width: 100px;
-    padding: 5px;
-    color: white;
     background: rgba(25, 0, 255, 0.111);
     border: 1px solid rgba(25, 0, 255, 0.66);
     border-radius: 8px;
     transition: .2s;
     cursor: pointer;
-  }
+}
 
-  header .add-column:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-    0 5px 5px 0 rgba(250, 250, 0, 0.66);
-  }
-  
-  header .close-column:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-    0 5px 5px 0 rgba(222, 33, 33, 0.66);
-  }
-  
-  header .new-column:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 
-    0 5px 5px 0 rgba(25, 0, 255, 0.66);
-  }
+header .add-card:hover, .add-column:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 0 5px 5px 0 rgba(250, 250, 0, 0.66);
+}
 
-  .row {
+header .close-card:hover, .close-column:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 0 5px 5px 0 rgba(222, 33, 33, 0.66);
+}
+
+header .new-card:hover, .new-column:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.66), 0 5px 5px 0 rgba(25, 0, 255, 0.66);
+}
+
+.row {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    width: 500px;
-    margin: auto;
-  }
+}
 
-  .fields {
+.fields {
     display: flex;
     flex-direction: column;
-  }
-  
-  .fields #title {
-    width: 460px;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.fields input {
+    width: 100%;
     border-radius: 10px;
     padding: 15px;
-    border: 1px solid rgb(250, 250, 0, 0.6);
-  }
-  
-  .fields #title-column {
-    width: 460px;
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  
-  .fields #description {
-    width: 460px;
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid rgb(250, 250, 0, 0.6);
-  }
-  
-  .column-container {
+    border: 1px solid rgba(250, 250, 0, 0.6);
+    background-color: #333;
+    color: white;
+}
+
+.column-container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-  
-  .column-container .task-column {
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.task-column {
     color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 20px;
-    margin: 10px;
+    padding: 15px;
     width: 300px;
-  }
-  
-  .task-list {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .task-container {
+    flex-shrink: 0;
+}
+
+.task-list {
+    min-height: 100px;
+}
+
+.task-container {
     background-color: rgb(150, 150, 150);
-    border-radius: 16px;
-    margin: 20px 0;
-    box-shadow: rgba(250, 250, 0, 0.500) 0 2px 2px,
-      rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: rgba(250, 250, 0, 0.5) 0 2px 2px, rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
     overflow: hidden;
-  }
-  
-  .task-header {
+    cursor: grab;
+}
+
+.task-container.is-dragging {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.task-header {
     padding: 5px 15px;
-    background-color: none;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
-  }
-  
-  .task-description-container {
-    padding: 10px;
-    background-color: none;
-    color: rgb(255, 255, 255);
-  }
-  
-  .error-container {
+    align-items: center;
+}
+
+.task-header p {
+    margin: 5px 0;
+}
+
+.delete-task {
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.task-description-container {
+    padding: 0 15px 10px 15px;
+    color: rgb(220, 220, 220);
+}
+
+.task-description-container p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.error-container {
     height: 30px;
-  }
-  
-  .error-message {
-    text-align: center;
-    margin: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    margin: 0;
     background-color: rgb(143, 29, 29);
     border-radius: 10px;
     padding: 10px 20px;
     color: rgb(255, 255, 255);
-  }
-  
+}
+
+.column-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.column-header-actions h3 {
+    margin: 0;
+}
+
+.column-options-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.column-options-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.column-options-menu {
+    position: absolute;
+    background-color: rgba(60, 60, 60, 0.95);
+    border: 1px solid rgba(250, 250, 0, 0.6);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 5px 0;
+    z-index: 200;
+    display: none;
+    right: 0;
+    top: 35px;
+    min-width: 120px;
+}
+
+.column-options-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.column-options-menu button:hover {
+    background-color: rgba(250, 250, 0, 0.2);
+}
+
+.edit-column-title-input {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin: 5px 0;
+    border: 1px solid rgba(250, 250, 0, 0.6);
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    font-size: 1.2em;
+}
+
+.edit-task-input, .edit-task-textarea {
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    margin: 5px 0;
+    border: 1px solid rgba(250, 250, 0, 0.6);
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    font-size: 1em;
+}
+
+.edit-task-textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+.task-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-right: 5px;
+}
+
+.task-header p:first-child {
+    flex-grow: 1; 
+}
+
+.save-task-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    width: 100%;
+    color: white;
+    background: rgba(30, 150, 50, 0.4);
+    border: 1px solid rgba(30, 150, 50, 0.8);
+    border-radius: 5px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.save-task-btn:hover {
+    background: rgba(30, 150, 50, 0.6);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
